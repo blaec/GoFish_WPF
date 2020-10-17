@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:GoFish_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="10">
+
+    <Window.Resources>
+        <local:Game x:Key="game"/>
+    </Window.Resources>
+
+    <Grid Margin="10" DataContext="{StaticResource ResourceKey=game}">
         <TextBlock Text="Your Name" />
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <TextBox x:Name="playerName" FontSize="12" Width="150" 
@@ -16,8 +21,7 @@
                 Content="Start the game!" Click="startButton_Click"/>
         </StackPanel>
         <TextBlock Text="Game progress" Grid.Row="2" Margin="0,10,0,0"/>
-        <ScrollViewer Grid.Row="3" FontSize="12" Background="White" Foreground="Black" 
-                    Content="{Binding GameProgress}" />
+        <ScrollViewer Grid.Row="3" FontSize="12" Background="White" Foreground="Black" Content="{Binding GameProgress}" />
         <TextBlock Text="Books" Margin="0,10,0,0" Grid.Row="4"/>
         <ScrollViewer FontSize="12" Background="White" Foreground="Black"
                 Grid.Row="5" Grid.RowSpan="2" 
