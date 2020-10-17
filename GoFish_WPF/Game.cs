@@ -131,7 +131,7 @@ namespace GoFish_WPF
             string description = "";
             foreach (Values key in books.Keys)
             {
-                description += $"{books.GetValueOrDefault(key).Name} has a book of {Card.Plural(key)}.";
+                description += $"{books.GetValueOrDefault(key).Name} has a book of {Card.Plural(key)}.{Environment.NewLine}";
             }
             return description;
         }
